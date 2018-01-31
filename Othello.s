@@ -1012,11 +1012,36 @@ mov r1,#13
 ldr r3,=score1
 ldr r2,[r3]
 swi 0x205
+
+cmp r2,#10
+bge remdot1
+
+mov r0,#11
+mov r1,#13
+mov r2,#'z
+swi 0x207
+
+
+
+remdot1:
+
+ 
+
 mov r0,#29
 mov r1,#13
 ldr r3,=score2
 ldr r2,[r3]
 swi 0x205
+
+cmp r2,#10
+bge remdot2
+
+mov r0,#30
+mov r1,#13
+mov r2,#'z
+swi 0x207
+
+remdot2:
 
 mov r0,#2
 mov r1,#0
